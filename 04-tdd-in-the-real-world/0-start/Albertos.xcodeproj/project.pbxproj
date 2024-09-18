@@ -13,6 +13,11 @@
 		3FC9D8B82562389F00BF115D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC9D8B72562389F00BF115D /* Preview Assets.xcassets */; };
 		3FC9D8C3256238A000BF115D /* AlbertosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9D8C2256238A000BF115D /* AlbertosTests.swift */; };
 		3FC9D8CE256238A000BF115D /* AlbertosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9D8CD256238A000BF115D /* AlbertosUITests.swift */; };
+		65EB93DB2C9B756800CB01A1 /* MenuGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB93DA2C9B756800CB01A1 /* MenuGroupingTests.swift */; };
+		65EB93DD2C9B763600CB01A1 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB93DC2C9B763600CB01A1 /* MenuItem.swift */; };
+		65EB93DF2C9B77D800CB01A1 /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB93DE2C9B77D800CB01A1 /* MenuSection.swift */; };
+		65EB93E12C9B7EB100CB01A1 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB93E02C9B7EB100CB01A1 /* Collection+Safe.swift */; };
+		65EB93E32C9B80CC00CB01A1 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB93E22C9B80CC00CB01A1 /* MenuList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		3FC9D8C9256238A000BF115D /* AlbertosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbertosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC9D8CD256238A000BF115D /* AlbertosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbertosUITests.swift; sourceTree = "<group>"; };
 		3FC9D8CF256238A000BF115D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65EB93DA2C9B756800CB01A1 /* MenuGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuGroupingTests.swift; sourceTree = "<group>"; };
+		65EB93DC2C9B763600CB01A1 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		65EB93DE2C9B77D800CB01A1 /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
+		65EB93E02C9B7EB100CB01A1 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		65EB93E22C9B80CC00CB01A1 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,10 @@
 				3FC9D8B22562389E00BF115D /* ContentView.swift */,
 				3FC9D8B92562389F00BF115D /* Info.plist */,
 				3FC9D8B62562389F00BF115D /* Preview Content */,
+				65EB93DC2C9B763600CB01A1 /* MenuItem.swift */,
+				65EB93DE2C9B77D800CB01A1 /* MenuSection.swift */,
+				65EB93E02C9B7EB100CB01A1 /* Collection+Safe.swift */,
+				65EB93E22C9B80CC00CB01A1 /* MenuList.swift */,
 			);
 			path = Albertos;
 			sourceTree = "<group>";
@@ -116,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3FC9D8C2256238A000BF115D /* AlbertosTests.swift */,
+				65EB93DA2C9B756800CB01A1 /* MenuGroupingTests.swift */,
 				3FC9D8C4256238A000BF115D /* Info.plist */,
 			);
 			path = AlbertosTests;
@@ -140,7 +155,6 @@
 				3FC9D8A92562389E00BF115D /* Sources */,
 				3FC9D8AA2562389E00BF115D /* Frameworks */,
 				3FC9D8AB2562389E00BF115D /* Resources */,
-				3FC9D901256248DF00BF115D /* Sort Project Alphabetically */,
 			);
 			buildRules = (
 			);
@@ -255,33 +269,16 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3FC9D901256248DF00BF115D /* Sort Project Alphabetically */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Sort Project Alphabetically";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/BuildPhases/xcsort\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3FC9D8A92562389E00BF115D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EB93DD2C9B763600CB01A1 /* MenuItem.swift in Sources */,
 				3FC9D8B12562389E00BF115D /* AlbertosApp.swift in Sources */,
+				65EB93DF2C9B77D800CB01A1 /* MenuSection.swift in Sources */,
+				65EB93E12C9B7EB100CB01A1 /* Collection+Safe.swift in Sources */,
+				65EB93E32C9B80CC00CB01A1 /* MenuList.swift in Sources */,
 				3FC9D8B32562389E00BF115D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC9D8C3256238A000BF115D /* AlbertosTests.swift in Sources */,
+				65EB93DB2C9B756800CB01A1 /* MenuGroupingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
