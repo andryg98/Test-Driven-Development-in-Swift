@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,8 @@
 		3FF6743B256A7C2200BD74AF /* MenuRow.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6743A256A7C2200BD74AF /* MenuRow.ViewModelTests.swift */; };
 		3FF67475256CAA5900BD74AF /* MenuList.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF67474256CAA5900BD74AF /* MenuList.ViewModelTests.swift */; };
 		3FF67486256E800E00BD74AF /* MenuFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF67485256E800E00BD74AF /* MenuFetching.swift */; };
+		6558369D2CA8487E00A23EB6 /* MenuFetchingStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558369C2CA8487E00A23EB6 /* MenuFetchingStub.swift */; };
+		6558369F2CA84B6F00A23EB6 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558369E2CA84B6F00A23EB6 /* TestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		3FF6743A256A7C2200BD74AF /* MenuRow.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.ViewModelTests.swift; sourceTree = "<group>"; };
 		3FF67474256CAA5900BD74AF /* MenuList.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.ViewModelTests.swift; sourceTree = "<group>"; };
 		3FF67485256E800E00BD74AF /* MenuFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetching.swift; sourceTree = "<group>"; };
+		6558369C2CA8487E00A23EB6 /* MenuFetchingStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetchingStub.swift; sourceTree = "<group>"; };
+		6558369E2CA84B6F00A23EB6 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +131,8 @@
 				3FF67485256E800E00BD74AF /* MenuFetching.swift */,
 				3F567DF8267BE8D6000A5361 /* MenuFetchingPlaceholder.swift */,
 				3FC9D8E725623AB500BF115D /* MenuGrouping.swift */,
-				3FC9D8EC25623AD900BF115D /* MenuItem.swift */,
 				3F83FFF2259D68050017214F /* MenuList.ViewModel.swift */,
+				3FC9D8EC25623AD900BF115D /* MenuItem.swift */,
 				3F4F06CB2563DD3D00D94779 /* MenuList.swift */,
 				3F83FFE7259D66770017214F /* MenuRow.ViewModel.swift */,
 				3FF67432256A7B5100BD74AF /* MenuRow.swift */,
@@ -156,6 +160,8 @@
 				3FF67474256CAA5900BD74AF /* MenuList.ViewModelTests.swift */,
 				3FF6743A256A7C2200BD74AF /* MenuRow.ViewModelTests.swift */,
 				3FF67424256A777000BD74AF /* MenuSection+Fixture.swift */,
+				6558369C2CA8487E00A23EB6 /* MenuFetchingStub.swift */,
+				6558369E2CA84B6F00A23EB6 /* TestError.swift */,
 			);
 			path = AlbertosTests;
 			sourceTree = "<group>";
@@ -249,7 +255,6 @@
 				};
 			};
 			buildConfigurationList = 3FC9D8662562374800BF115D /* Build configuration list for PBXProject "Albertos" */;
-			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -257,6 +262,7 @@
 				Base,
 			);
 			mainGroup = 3FC9D8622562374800BF115D;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 3FC9D8AE2562389E00BF115D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,7 +303,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		3FC9D901256248DF00BF115D /* Sort Project Alphabetically */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -309,7 +315,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/BuildPhases/xcsort\n";
 		};
@@ -341,8 +347,10 @@
 				3FC9D8DD2562397500BF115D /* MenuGroupingTests.swift in Sources */,
 				3FF6741D256A708200BD74AF /* MenuItem+Fixture.swift in Sources */,
 				3FF67475256CAA5900BD74AF /* MenuList.ViewModelTests.swift in Sources */,
+				6558369F2CA84B6F00A23EB6 /* TestError.swift in Sources */,
 				3FF6743B256A7C2200BD74AF /* MenuRow.ViewModelTests.swift in Sources */,
 				3FF67425256A777000BD74AF /* MenuSection+Fixture.swift in Sources */,
+				6558369D2CA8487E00A23EB6 /* MenuFetchingStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
