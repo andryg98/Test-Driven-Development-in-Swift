@@ -1,14 +1,28 @@
+import Combine
+
 extension MenuList {
 
-    struct ViewModel {
+    class ViewModel: ObservableObject {
 
-        let sections: [MenuSection]
+        @Published private(set) var sections: [MenuSection]
+        
+        var cancellables = Set<AnyCancellable>()
 
         init(
-            menu: [MenuItem],
+            menuFetching: MenuFetching,
             menuGrouping: @escaping ([MenuItem]) -> [MenuSection] = groupMenuByCategory
         ) {
-            self.sections = menuGrouping(menu)
+            self.sections = []
+            
+            menuFetching
+                .fetchMenu()
+                .sink(
+                    receiveCompletion: { _ in },
+                    receiveValue: { [weak self] value in
+                        self?.sections = menuGrouping(value)
+                    }
+                )
+            .store(in: &cancellables)
         }
     }
 }

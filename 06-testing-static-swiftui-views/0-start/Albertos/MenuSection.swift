@@ -8,3 +8,5 @@ extension MenuSection: Identifiable {
 
     var id: String { category }
 }
+
+extension MenuSection: Equatable { }

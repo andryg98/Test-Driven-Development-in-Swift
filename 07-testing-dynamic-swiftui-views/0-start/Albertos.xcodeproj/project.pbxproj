@@ -24,6 +24,8 @@
 		3FF67433256A7B5100BD74AF /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF67432256A7B5100BD74AF /* MenuRow.swift */; };
 		3FF6743B256A7C2200BD74AF /* MenuRow.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6743A256A7C2200BD74AF /* MenuRow.ViewModelTests.swift */; };
 		3FF67475256CAA5900BD74AF /* MenuList.ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF67474256CAA5900BD74AF /* MenuList.ViewModelTests.swift */; };
+		655836992CA8398A00A23EB6 /* MenuFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655836982CA8398A00A23EB6 /* MenuFetching.swift */; };
+		6558369B2CA83B5700A23EB6 /* MenuFetchingPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558369A2CA83B5700A23EB6 /* MenuFetchingPlaceholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		3FF67432256A7B5100BD74AF /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
 		3FF6743A256A7C2200BD74AF /* MenuRow.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.ViewModelTests.swift; sourceTree = "<group>"; };
 		3FF67474256CAA5900BD74AF /* MenuList.ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.ViewModelTests.swift; sourceTree = "<group>"; };
+		655836982CA8398A00A23EB6 /* MenuFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetching.swift; sourceTree = "<group>"; };
+		6558369A2CA83B5700A23EB6 /* MenuFetchingPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFetchingPlaceholder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +131,9 @@
 				3F83FFE7259D66770017214F /* MenuRow.ViewModel.swift */,
 				3FF67432256A7B5100BD74AF /* MenuRow.swift */,
 				3FC9D8F125623AE600BF115D /* MenuSection.swift */,
+				6558369A2CA83B5700A23EB6 /* MenuFetchingPlaceholder.swift */,
 				3FC9D8B62562389F00BF115D /* Preview Content */,
+				655836982CA8398A00A23EB6 /* MenuFetching.swift */,
 			);
 			path = Albertos;
 			sourceTree = "<group>";
@@ -173,7 +179,6 @@
 				3FC9D8A92562389E00BF115D /* Sources */,
 				3FC9D8AA2562389E00BF115D /* Frameworks */,
 				3FC9D8AB2562389E00BF115D /* Resources */,
-				3FC9D901256248DF00BF115D /* Sort Project Alphabetically */,
 			);
 			buildRules = (
 			);
@@ -288,27 +293,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3FC9D901256248DF00BF115D /* Sort Project Alphabetically */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Sort Project Alphabetically";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/BuildPhases/xcsort\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3FC9D8A92562389E00BF115D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -322,6 +306,8 @@
 				3F83FFE8259D66770017214F /* MenuRow.ViewModel.swift in Sources */,
 				3FF67433256A7B5100BD74AF /* MenuRow.swift in Sources */,
 				3FC9D8F225623AE600BF115D /* MenuSection.swift in Sources */,
+				6558369B2CA83B5700A23EB6 /* MenuFetchingPlaceholder.swift in Sources */,
+				655836992CA8398A00A23EB6 /* MenuFetching.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

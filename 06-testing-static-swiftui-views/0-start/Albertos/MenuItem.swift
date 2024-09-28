@@ -10,3 +10,5 @@ extension MenuItem: Identifiable {
 
     var id: String { name }
 }
+
+extension MenuItem: Equatable { }
