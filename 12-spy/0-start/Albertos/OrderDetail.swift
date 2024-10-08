@@ -28,6 +28,18 @@ struct OrderDetail: View {
             }
 
             Spacer()
+            
+            Button {
+                viewModel.checkout()
+            } label: {
+                Text(viewModel.checkoutButtonText)
+                    .font(.callout)
+                    .bold()
+                    .padding(12)
+                    .foregroundColor(.white)
+                    .background(Color.crimson)
+                    .cornerRadius(10.0)
+            }
         }
         .padding(8)
     }

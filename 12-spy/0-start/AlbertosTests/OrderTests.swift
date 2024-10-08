@@ -10,4 +10,22 @@ class OrderTests: XCTestCase {
 
         XCTAssertEqual(order.total, 6.5)
     }
+    
+    func testOrderEmptyCreatesHippoPaymentPayloadEmpty() {
+        let expectedHippoPaymentPayload: HippoPaymentPayload = HippoPaymentPayload(items: [])
+        let order = Order(items: [])
+        
+        let hippoPaymentPayload = order.convertToHippoPaymentPayload()
+        
+        XCTAssertEqual(hippoPaymentPayload, expectedHippoPaymentPayload)
+    }
+    
+    func testOrderWithItemsCreatesHippoPaymentPayloadWithItems() {
+        let expectedHippoPaymentPayload: HippoPaymentPayload = HippoPaymentPayload(items: ["Arancini balls", "Penne all'arrabbiata"])
+        let order = Order(items: [.fixture(name: "Arancini balls"), .fixture(name: "Penne all'arrabbiata")])
+        
+        let hippoPaymentPayload = order.convertToHippoPaymentPayload()
+        
+        XCTAssertEqual(hippoPaymentPayload, expectedHippoPaymentPayload)
+    }
 }

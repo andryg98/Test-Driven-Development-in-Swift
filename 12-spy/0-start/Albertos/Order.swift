@@ -1,4 +1,4 @@
-struct Order {
+struct Order: Equatable {
 
     let items: [MenuItem]
 
