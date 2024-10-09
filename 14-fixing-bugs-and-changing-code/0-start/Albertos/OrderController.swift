@@ -27,4 +27,8 @@ class OrderController: ObservableObject {
 
         order = Order(items: newItems)
     }
+    
+    func reset() {
+        order = Order(items: [])
+    }
 }
