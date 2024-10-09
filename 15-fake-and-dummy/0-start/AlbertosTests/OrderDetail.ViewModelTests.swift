@@ -5,7 +5,7 @@ class OrderDetailViewModelTests: XCTestCase {
 
     func testWhenCheckoutButtonPressedStartsPaymentProcessingFlow() {
         // Create an OrderController and add some items to it
-        let orderController = OrderController()
+        let orderController = OrderController(orderStoring: OrderStoringFake())
         orderController.addToOrder(item: .fixture(name: "name"))
         orderController.addToOrder(item: .fixture(name: "other name"))
         // Create the Spy
@@ -95,8 +95,8 @@ class OrderDetailViewModelTests: XCTestCase {
 
     func testWhenOrderIsEmptyShouldNotShowTotalAmount() {
         let viewModel = OrderDetail.ViewModel(
-            orderController: OrderController(),
-            paymentProcessor: PaymentProcessingSpy(),
+            orderController: OrderController(orderStoring: OrderStoringFake()),
+            paymentProcessor: PaymentProcessingDummy(),
             onAlertDismiss: {}
         )
 
@@ -104,7 +104,7 @@ class OrderDetailViewModelTests: XCTestCase {
     }
 
     func testWhenOrderIsNonEmptyShouldShowTotalAmount() {
-        let orderController = OrderController()
+        let orderController = OrderController(orderStoring: OrderStoringFake())
         orderController.addToOrder(item: .fixture(price: 1.0))
         orderController.addToOrder(item: .fixture(price: 2.3))
         let viewModel = OrderDetail.ViewModel(
@@ -118,7 +118,7 @@ class OrderDetailViewModelTests: XCTestCase {
 
     func testWhenOrderIsEmptyHasNotItemNamesToShow() {
         let viewModel = OrderDetail.ViewModel(
-            orderController: OrderController(),
+            orderController: OrderController(orderStoring: OrderStoringFake()),
             paymentProcessor: PaymentProcessingSpy(),
             onAlertDismiss: {}
         )
@@ -128,7 +128,7 @@ class OrderDetailViewModelTests: XCTestCase {
 
     func testWhenOrderIsEmptyDoesNotShowCheckoutButton() {
         let viewModel = OrderDetail.ViewModel(
-            orderController: OrderController(),
+            orderController: OrderController(orderStoring: OrderStoringFake()),
             paymentProcessor: PaymentProcessingSpy(),
             onAlertDismiss: {}
         )
@@ -137,7 +137,7 @@ class OrderDetailViewModelTests: XCTestCase {
     }
 
     func testWhenOrderIsNonEmptyMenuListItemIsOrderItems() {
-        let orderController = OrderController()
+        let orderController = OrderController(orderStoring: OrderStoringFake())
         orderController.addToOrder(item: .fixture(name: "a name"))
         orderController.addToOrder(item: .fixture(name: "another name"))
         let viewModel = OrderDetail.ViewModel(

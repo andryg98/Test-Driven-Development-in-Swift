@@ -1,11 +1,15 @@
 import Combine
+import Foundation
 
 class OrderController: ObservableObject {
 
     @Published private(set) var order: Order
-
-    init(order: Order = Order(items: [])) {
-        self.order = order
+    
+    private let orderStoring: OrderStoring
+    
+    init(orderStoring: OrderStoring = UserDefaults.standard) {
+        self.orderStoring = orderStoring
+        order = orderStoring.getOrder()
     }
 
     func isItemInOrder(_ item: MenuItem) -> Bool {
@@ -13,7 +17,7 @@ class OrderController: ObservableObject {
     }
 
     func addToOrder(item: MenuItem) {
-        order = Order(items: order.items + [item])
+        updateOrder(with: Order(items: order.items + [item]))
     }
 
     func removeFromOrder(item: MenuItem) {
@@ -25,10 +29,15 @@ class OrderController: ObservableObject {
             return .none
         }
 
-        order = Order(items: newItems)
+        updateOrder(with: Order(items: newItems))
     }
 
     func resetOrder() {
-        order = Order(items: [])
+        updateOrder(with: Order(items: []))
+    }
+    
+    private func updateOrder(with newOrder: Order) {
+        orderStoring.updateOrder(newOrder)
+        order = newOrder
     }
 }

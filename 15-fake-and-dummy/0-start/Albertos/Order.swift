@@ -6,3 +6,5 @@ struct Order {
 }
 
 extension Order: Equatable {}
+
+extension Order: Codable {}
