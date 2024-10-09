@@ -24,6 +24,7 @@ struct OrderButton: View {
             OrderDetail(
                 viewModel: .init(
                     orderController: orderController,
+                    onAlertDismiss: {},
                     paymentProcessor: paymentProcessor
                 )
             )

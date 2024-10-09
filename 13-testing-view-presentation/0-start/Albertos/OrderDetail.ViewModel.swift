@@ -1,9 +1,12 @@
 import Combine
+import SwiftUI
 import HippoPayments
 
 extension OrderDetail {
 
-    struct ViewModel {
+    class ViewModel: ObservableObject {
+        
+        private var cancellables = Set<AnyCancellable>()
 
         let headerText = "Your Order"
         let menuListItems: [MenuItem]
@@ -12,12 +15,21 @@ extension OrderDetail {
 
         let shouldShowCheckoutButton: Bool
         let checkoutButtonText = "Checkout"
+        
+        @Published var alertToShow: Alert.ViewModel?
 
         private let orderController: OrderController
         private let paymentProcessor: PaymentProcessing
+        
+        let onAlertDismiss: () -> Void
 
-        init(orderController: OrderController, paymentProcessor: PaymentProcessing) {
+        init(
+            orderController: OrderController,
+            onAlertDismiss: @escaping () -> Void,
+            paymentProcessor: PaymentProcessing
+        ) {
             self.orderController = orderController
+            self.onAlertDismiss = onAlertDismiss
             self.paymentProcessor = paymentProcessor
 
             if orderController.order.items.isEmpty {
@@ -33,6 +45,28 @@ extension OrderDetail {
 
         func checkout() {
             paymentProcessor.process(order: orderController.order)
+                .sink(receiveCompletion: { [weak self] completion in
+                    guard case .failure = completion else { return }
+                    guard let self = self else { return }
+                    
+                    self.alertToShow = Alert.ViewModel(
+                        title: "",
+                        message: "There's been an error with your order. Please contact a waiter.",
+                        buttonText: "Ok",
+                        buttonAction: self.onAlertDismiss
+                    )
+
+                }, receiveValue: { [weak self] _ in
+                    guard let self = self else { return }
+
+                    self.alertToShow = Alert.ViewModel(
+                        title: "",
+                        message: "The payment was successful. Your food will be with you shortly.",
+                        buttonText: "Ok",
+                        buttonAction: self.onAlertDismiss
+                    )
+                })
+                .store(in: &cancellables)
         }
     }
 }
